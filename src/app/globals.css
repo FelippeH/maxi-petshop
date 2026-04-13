@@ -13,6 +13,11 @@
   --vertical-line: #f5f5f5; /* cor para linha vertical */
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Melhorar renderização de fontes */
 body {
   -webkit-font-smoothing: antialiased;
@@ -35,8 +40,14 @@ ol {
   list-style: none;
 }
 
-/* Imagens responsivas */
-img {
+/* Imagens responsivas (exceto next/image) */
+img:not([data-nimg]) {
   max-width: 100%;
+  height: auto;
   display: block;
+}
+
+/* Evita conflito com o warning do next/image ao redimensionar logos */
+img[data-nimg] {
+  max-width: none;
 }
