@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --primary-bg: #fefefe; /* background principal */
+  --secondary-bg: #f8f9f6; /* background realce */
+  --primary-color: #558451; /* cor principal */
+  --primary-color-hover: #6c9169; /* cor hover para botões */
+  --secondary-color: #dce7d7; /* cor realce */
+  --secondary-color-hover: #f5f5f5; /* cor hover para realce */
+  --secondary-color-font: #757575; /* cor realce para fontes */
+  --vertical-line: #f5f5f5; /* cor para linha vertical */
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Melhorar renderização de fontes */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Prevenir shift quando barra de endereço mobile some */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+/* Remover estilos padrão de listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Imagens responsivas (exceto next/image) */
+img:not([data-nimg]) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Evita conflito com o warning do next/image ao redimensionar logos */
+img[data-nimg] {
+  max-width: none;
+}
