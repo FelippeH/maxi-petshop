@@ -40,7 +40,7 @@ export default function Shortcuts() {
                 href="#produtos"
                 className="mt-2 text-lg text-(--primary-color)"
               >
-                Ver produtos
+                Ver Catálogo
               </a>
             </article>
           ))}
@@ -54,10 +54,10 @@ export default function Shortcuts() {
             {shortcuts.map((shortcut, index) => (
               <div
                 key={shortcut.title}
-                className="h-full flex items-center justify-center"
+                className="flex items-center justify-center"
               >
                 <div
-                  className={`h-[60%] w-full flex flex-col items-center justify-center gap-5 ${
+                  className={`h-[60%] w-full flex flex-col items-center justify-center ${
                     index < shortcuts.length - 1
                       ? "border-r-2 border-(--vertical-line)"
                       : ""
@@ -66,7 +66,7 @@ export default function Shortcuts() {
                   <Image
                     src={shortcut.image}
                     alt={shortcut.title}
-                    className="h-22 w-22 object-cover"
+                    className="h-22 w-22 object-cover mb-6"
                     width={200}
                     height={200}
                   />
@@ -79,7 +79,7 @@ export default function Shortcuts() {
                     href="#produtos"
                     className="text-(--primary-color) text-lg"
                   >
-                    Ver produtos
+                    Ver Catálogo
                   </a>
                 </div>
               </div>

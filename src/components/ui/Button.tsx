@@ -1,4 +1,4 @@
-type ButtonProps = {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
   variant?:
     | "primaryDesktop"
@@ -7,7 +7,12 @@ type ButtonProps = {
     | "secondaryMobile";
 };
 
-export function Button({ children, variant = "primaryDesktop" }: ButtonProps) {
+export function Button({
+  children,
+  variant = "primaryDesktop",
+  className = "",
+  ...props
+}: ButtonProps) {
   const base = "px-4 py-2 rounded transition";
 
   const styles = {
@@ -21,5 +26,9 @@ export function Button({ children, variant = "primaryDesktop" }: ButtonProps) {
       "flex justify-center items-center w-40 h-13 font-medium text-[1rem] bg-white rounded-xl cursor-pointer hover:bg-(--secondary-color-hover)",
   };
 
-  return <button className={`${base} ${styles[variant]}`}>{children}</button>;
+  return (
+    <button className={`${base} ${styles[variant]} ${className}`} {...props}>
+      {children}
+    </button>
+  );
 }

@@ -11,10 +11,7 @@ export default function Header() {
   return (
     <header className="w-full overflow-hidden">
       {/* Mobile */}
-      <div
-        className="md:hidden relative h-150 overflow-hidden"
-        style={{ marginTop: "88px" }}
-      >
+      <div className="md:hidden relative h-150 overflow-hidden">
         <Image
           src={bannerMobile}
           alt="Banner do site no mobile"
@@ -48,10 +45,7 @@ export default function Header() {
       </div>
 
       {/* Desktop */}
-      <div
-        className="hidden md:block relative w-full h-[90vh] overflow-hidden"
-        style={{ marginTop: "112px" }}
-      >
+      <div className="hidden md:block relative w-full h-[90vh] overflow-hidden">
         <Image
           src={bannerHeader}
           alt="Banner Animais"
