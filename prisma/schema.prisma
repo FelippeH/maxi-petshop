@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model blog {
+  id        Int       @id @default(autoincrement())
+  title     String?
+  content   String?   @db.MediumText
+  slug      String?
+  createdAt DateTime?
+  cover     String?
+}
+
+model newsletter {
+  id        Int       @id @default(autoincrement())
+  email     String    @db.VarChar(150)
+  createdAt DateTime?
+}
